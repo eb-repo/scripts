@@ -33,7 +33,6 @@ def run_as_admin():
             1
         )
         if ret <= 32:
-            sleep(2)
             run_as_admin()
     else:
         run()
